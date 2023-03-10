@@ -12,14 +12,14 @@ public class AnatolyKarpov extends Jogador{
     public int[] jogar(int[][] tabuleiro) {
 
 
-        if(CheckRowVitoryCondition(tabuleiro)!=null){
-            return CheckRowVitoryCondition(tabuleiro); //checando condicao de vitoria row
+        if(CheckRowVictoryCondition(tabuleiro)!=null){
+            return CheckRowVictoryCondition(tabuleiro); //checando condicao de vitoria row
 
-        }else if(CheckColumnVitoryCondition(tabuleiro)!=null){ //checando condicao de vitoria Column
-            return CheckColumnVitoryCondition(tabuleiro);
+        }else if(CheckColumnVictoryCondition(tabuleiro)!=null){ //checando condicao de vitoria Column
+            return CheckColumnVictoryCondition(tabuleiro);
         }
-        else if (CheckTransversalVitoryCondition(tabuleiro)!=null) { // checando condicao de vitoria transversal
-            return CheckTransversalVitoryCondition(tabuleiro);
+        else if (CheckTransversalVictoryCondition(tabuleiro)!=null) { // checando condicao de vitoria transversal
+            return CheckTransversalVictoryCondition(tabuleiro);
         }
 
 
@@ -145,7 +145,7 @@ public class AnatolyKarpov extends Jogador{
         return null;
         }
 
-    private int[] CheckRowVitoryCondition(int[][] tabuleiro) {
+    private int[] CheckRowVictoryCondition(int[][] tabuleiro) {
         //first check de row and keep adding in column
         //r = row
         //c = column
@@ -177,7 +177,7 @@ public class AnatolyKarpov extends Jogador{
         return null;
     }
 
-    private int[] CheckColumnVitoryCondition(int[][] tabuleiro) {
+    private int[] CheckColumnVictoryCondition(int[][] tabuleiro) {
         //first check de row and keep adding in column
         //r = row
         //c = column
@@ -212,7 +212,7 @@ public class AnatolyKarpov extends Jogador{
         return null;
     }
 
-    private int[] CheckTransversalVitoryCondition(int[][] tabuleiro) {
+    private int[] CheckTransversalVictoryCondition(int[][] tabuleiro) {
         //first check de row and keep adding in column
         //r = row
         //c = column
