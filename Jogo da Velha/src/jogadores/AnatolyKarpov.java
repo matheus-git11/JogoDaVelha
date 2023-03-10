@@ -117,11 +117,9 @@ public class AnatolyKarpov extends Jogador{
             if (tabuleiro[r][r] != -1 && tabuleiro[r][r] != this.getSimbolo()) { // ja achou um lugar inimigo
                 return null;
             } else { // espaco vazio caso tenha condicao de vitoria
-                if (tabuleiro[r][r] != this.getSimbolo()) {
+                if (tabuleiro[r][r] == -1) {
                     jogada[0] = r;
                     jogada[1] = r;
-                } else {
-                    continue;
                 }
                 if (r == length ) {
                     return jogada;
@@ -130,27 +128,22 @@ public class AnatolyKarpov extends Jogador{
         }
 
             for (int r = 0; r < length; r++) { // for para percorrer linha
-                int tableEnd = tabuleiro.length;
+                int tableEnd = tabuleiro.length-1;
 
-                if (tabuleiro[r][tableEnd-1] != -1 && tabuleiro[r][r] != this.getSimbolo()) {
-                    break;
+                if (tabuleiro[r][tableEnd] != -1 && tabuleiro[r][r] != this.getSimbolo()) {
+                    return null;
                 }else { // espaco vazio caso tenha condicao de vitoria
                     tableEnd--;
-                    if (tabuleiro[r][tableEnd] != this.getSimbolo()) {
-                        continue;
-                    } else {
+                    } if(tabuleiro[r][tableEnd] == -1) {
                         jogada[0] = r;
                         jogada[1] = r;
                     }
-                    if (r == length - 1) {
+                    if (tableEnd == 0) {
                         return jogada;
                     }
             }
-        }
         return null;
-    }
-
-
+        }
 
     private int[] CheckRowVitoryCondition(int[][] tabuleiro) {
         //first check de row and keep adding in column
